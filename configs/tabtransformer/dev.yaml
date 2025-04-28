@@ -1,0 +1,28 @@
+PRETRAIN: true
+USE_LOGGER: true
+
+DATASET:
+  NUM_NA_VAL: 'mode'
+  NUM_NORM: 'z-score'
+  CAT_ENCODE: false
+  BATCH_SIZE: 128
+  DECISION_TREE:
+    MAX_COUNT: 80
+    MIN_SAMPLES_BIN: 8
+    DISCRETIZE_METHOD: 'vectorize'
+
+MODEL:
+  DEPTH: 12
+  HIDDEN_DIM: 512
+  USE_NUM_COL_NMS: true
+  USE_POS_EMBED: true
+  BACKBONE: 'gated_transformer'
+  USE_COL_TYPE_EMBED: false
+  PRETRAIN:
+    SUPERVISE: false
+    CORRUPT_RATIO: 0.5
+
+OPTIM:
+  MAX_EPOCH: 200
+  LR: 1e-4
+  PATIENCE: 10

@@ -1,0 +1,19 @@
+USE_LOGGER: True
+
+DATASET:
+  NUM_NA_VAL: 'mode'
+  NUM_NORM: 'z-score'
+  CAT_ENCODE: false
+  BATCH_SIZE: 512
+  DECISION_TREE:
+    DISCRETIZE_METHOD: 'none'
+
+MODEL:
+  DEPTH: 12
+  HIDDEN_DIM: 512
+  USE_NUM_COL_NMS: true
+
+OPTIM:
+  MAX_EPOCH: 200
+  LR: 1e-4
+  PATIENCE: 10
